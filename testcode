@@ -1,0 +1,33 @@
+ `#`include "stdafx.h"
+
+`#`include <opencv2/core/core.hpp>
+
+`#`include <opencv2/imgproc/imgproc.hpp>
+
+`#`include <opencv2/highgui/highgui.hpp>
+
+using namespace cv;
+
+void main()
+
+{
+
+Mat src =imread("LucBinh.jpg",CV_LOAD_IMAGE_COLOR);
+
+Mat gray, hsv, ycrcb;
+
+cvtColor(src, gray, CV_BGR2GRAY);
+
+cvtColor(src, hsv, CV_BGR2HSV);
+
+cvtColor(src, ycrcb, CV_BGR2YCrCb);
+
+imshow("src", src);
+
+imshow("gray", gray);
+
+imshow("hsv", hsv);
+
+imshow("ycrcb", ycrcb);
+
+waitKey(0);
